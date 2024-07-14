@@ -1,0 +1,352 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color:#3B4050;
+}
+img {
+    max-width: 100%;
+}
+section{
+    padding: 2.5rem 0;
+}
+/* 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif; 
+    font-weight: 700;
+*/
+/* .{
+    background-color: #2E323F;
+    background-color: #3B4050;
+    background-color: #6F737F;
+    background-color: #FFFFFF;
+    background-color: #A59678;
+} */
+h1, h2{
+    font-family: 'Oswald', sans-serif; 
+    color: #A59678;
+    margin-top: 0; 
+    line-height: 1.2;
+}
+.container{
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+header{
+    background-color: #2E323F;
+    padding: 1.5em 0;
+    text-align: center;
+}
+/* Set color of button here */
+.nav-toggle-btn{
+    width: 3rem;
+    background-color: #072A2D;
+    position: absolute;
+    left: 0;
+  
+    cursor: pointer;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 0;
+    padding: 0;
+}
+.nav{
+    /* width: 100%; */
+    position: absolute;
+    display: none;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif; 
+}
+.nav--visible{
+    display:block;
+    position: relative;
+    height: auto;
+}
+.nav__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav__list--primary{
+    margin-bottom: 2em;
+}
+.nav__item{
+    margin-top: 1em;
+}
+.nav__item:hover{
+    opacity: 0.5;
+}
+.nav__link{
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav__link--button{
+    background-color: #A59678;
+    color: white;
+    border-radius: 100px;
+    padding: 0.25em 0.75em;
+}
+
+
+.intro{
+    background-color:#3B4050;
+    color: white;
+    text-align: center;
+}
+.intro-title{
+    color: white;
+    font-size: 3rem;
+}
+.intro-title--highlight{
+    color:#A59678;
+}
+.intro-content{
+    font-size: 20px;
+}
+.intro-btn{
+    /* inline so that it doesn't stretch to 100% in mobile view */
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #A59678;
+    border-radius: 100px;
+    padding: 0.3em 1.25em;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.three-col{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+    text-align: center;
+}
+.section-one{
+    background-color:#F1F1F1;
+}
+.section-one-heading{
+    font-size: 30px;
+}
+.section-one__col{
+    font-size: 18px;
+    /* padding: 1.5rem; */
+}
+
+main{
+    font-size: 21px;
+}
+.main-title{
+    font-size: 36px;
+}
+aside{
+    margin-top: 2.5rem;
+}
+.aside-item{
+    background-color:#3B4050;
+    color: white;
+    font-size: 18px;
+    padding: 1.5rem;
+}
+.aside-heading{
+    font-size: 30px;
+    color: white;
+}
+aside :last-child .aside-heading{
+    visibility: hidden;
+}
+
+footer{
+    background-color:#3B4050;
+    color: #B1B5BD;
+    font-size: 16px;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+.footer-title{
+    color: white;
+}
+.footer-heading{
+    font-size: 21px;
+}
+.about{
+    margin-bottom: 1rem;
+}
+.about-p{
+    margin-bottom: 0;
+}
+.footer--3-col{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.footer-list{
+    list-style: none;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+.footer-list__item{
+    padding: 0.3rem 0rem;
+}
+
+@media (min-width: 700px){
+    section{
+        padding: 4rem 0;
+    }
+    .intro-title{
+        font-size: 4rem;
+    }
+    .intro-content{
+        font-size: 24px;
+    }
+    footer{
+        padding: 3rem 0;
+    }
+    .nav-toggle-btn{
+        display: none;
+    }
+    header .container{
+        display: flex;
+        align-items: center;
+    }
+    .nav{
+        display: flex;
+        position: relative;
+        flex-grow: 1;
+    }
+    .nav__list--primary{
+        margin: 0 auto;
+    }
+    .nav__list{
+        display: flex;
+    }
+    .nav__item + .nav__item{
+        margin-left: 1.5em;
+    }
+    .nav__item{
+        margin-top: 0;
+    }
+    .intro .container{
+        width: 70%;
+    }
+    .container{
+        width: 90%;
+    }
+    .three-col{
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    .aside-item{
+        width: 31%;
+        padding: 1.25rem;
+    }
+    .main-img{
+        max-height: 40vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    main img{
+        object-fit: cover;
+    }
+    .section-one__col{
+        width: 31%;
+        padding: 0.5rem;
+    }
+    .about{
+        margin: 2.5rem auto;
+        width: 60%;
+    }
+    .footer--3-col{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .footer-col{
+        width: 31%;
+        padding: 0.5rem;
+        
+    }
+}
+
+@media (min-width: 1000px){
+    section{
+        padding: 6rem 0;
+    }
+    .intro{
+        text-align: left;
+    }
+    .intro .container{
+        width: 90%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .intro-title{
+        font-size: 5.625rem;
+        margin: 0;
+        width: 90%;
+    }
+    .intro-content{
+        font-size: 24px;
+        line-height:1.5;
+    }
+    footer{
+        padding: 4rem 0;
+    }
+    .section-two .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    main{
+        width: 60%;
+    }
+    /* CSS specificity of id is greater than that of a class. Therefore,
+       it overwrites the property of three-col class ie. flex-direction: row*/
+    #section-two-aside{
+        margin-top: 0;
+        width: 30%;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .aside-item {
+        width: 100%;
+        padding: 2rem;
+    }
+    .four-col{
+        display: flex;
+        justify-content: space-between;
+    }
+    .about{
+        width: 40%;
+        margin: 0;
+        padding: 0.5rem;
+        text-align: left;
+    }
+    .footer-title{
+        margin-bottom: 4rem;
+    }
+    .about-p{
+        width: 85%;
+    }
+    .footer--3-col{
+        width: 60%;
+    }
+    .footer-col{
+        width: 31%;
+        padding: 0.5rem;
+        text-align: left;
+    }
+}

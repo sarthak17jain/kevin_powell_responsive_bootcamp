@@ -1,0 +1,78 @@
+CSS units use cases:
+NOTE:
+em is relative to the parent for HTML elements and it is
+relative to that particular element for margin, padding, border
+
+->for padding use em since it scales according to the content making it responsive
+->for margin use rem so that gap/space between HTML items remains constant and doesn not scale. 
+  for some cases can use em also if we want to scale according to the content
+->for text elements like p, span, headings etc use rem rather than em to prevent cascading
+->for width and height use %'s
+
+remember that the default root font according to which rem, em work is 16px.
+therefore 1px = 0.0625em. (use this relation to easily convert b/w pixels and relative units)
+
+always use relative units and avoid pixels
+
+to avoid calculation set the html/root font size to 62.5% so that 1 rem = 10px
+now, 17px = 1.7rem, 29px = 2.9rem easily do conversions
+
+Kevin powell conquering reponsive layouts course:
+HTML/CSS are by default resposive
+set width of an element using %'s instead of pixels
+then set max-width using hard coded pixel to handle large screens and stop them from growing further and looking awkward
+never set the height unless absolutely needed. since height kills the reponsiveness and causes overflow
+can use pixel padding top and bottom instead of height
+make another container inside the hero section and center it using margin: 0 auto and set it's width using %'s to make it responsive
+
+block level elements take up 100% of the width available
+while flex items shrink down to the smallest possible size.
+therefore to apply width: 100% to all flex-items so that none of the items(if it has less content than others) is forced to be a thin item by flex and other items
+
+nest an image element in a div which is a flex item. to prevent it from getting squished by text use width: 100%
+
+to perfectly center an HTML element use-> margin: 0 auto;
+to place an HTML element at the right of a container use-> margin-left: auto;
+to place an HTML element at the left of a container use-> margin-right: auto;
+
+write HTML code desktop first and CSS code mobile first
+
+order of media queries is important
+for mobile first designs (min-width) should be arranged in ascending order
+and the opposite for desktop first designs (max-width)
+
+Use the following breakpoints:
+Use <600(mobile),600px(tablet potrait), 900px(tablet landscape), 1200px(desktops), and 1800px(for giant monitors). 
+
+boilerplate code:
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+}
+/*we use max-width so that it shrinks when it needs to but it doesn't become larger than orignal and inturn become pixelated*/
+img{
+	max-width:100%;
+}
+
+in mobile design we dont worry about layout and start with typography. We style the h, p, body tags according to the most generic font-size, font-family in the website
+320px is the shortest mobile width
+mobile first design is preffered because we can forget about layout first and only focus on the typography, sizes and colors.
+then when shifting to desktop we can bring in the layout 
+
+usually desktop-first approach is the culprit to these issues.
+we do something for large screen sizes and then when we shrink things down,
+those layout decisions that we made are the things getting in the way and we have to start overwriting things
+writing mobile-first CSS tends to be the easier way to approach it as well, even if you only have a desktop layout to base things off of
+
+default flex-grow is 0
+default flex-basis is auto
+default flex-shrink is 1, this is the reason why all flex items by default shrink down to the smallest possible size.
+in flexbox for pushing all content to the right except one item, on that item use:
+1. width: 100%;
+2. flex-grow: 1;
+3. flex-basis: 100%;
+
+in flexbox we dont have justify items and justify-self, whereas this is present in grid.
+we cannot do things like stick 4 items, one to each corner of the container in flexbox.

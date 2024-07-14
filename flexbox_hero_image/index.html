@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+    <div class="hero">
+      <div class="container d-flex">
+        <div class="hero__text">
+          <h1>Responsive layouts dont have to be a struggle</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+          <button>I want to learn</button>
+        </div>
+        <!-- the default align-items of flex is strech therfore all items are stretched to the same max height. 
+            since the height of h1 and p combined is greater than the height of the image. the image is resized to the text's height        
+        -->
+        <!-- to prevent the issue of stretching there are 3 ways :
+          1. align-items: flex-start; (not preffered since we want the d-flex class to do as less work as possible)
+          2. wrap the image in a div so that the div stretched but not the image inside of it
+          3. use align-self: flex-start on image
+        -->
+        <!-- <div> -->
+          <img class="hero__img" src="./img/hero-img.jpg" alt="website sketches" />
+        <!-- </div> -->
+      </div>
+
+    </div>
+  </body>
+</html>
